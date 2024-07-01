@@ -1,0 +1,11 @@
+FROM python:3.12
+
+WORKDIR /tests
+
+COPY . .
+
+RUN pip install -r requirements.txt
+RUN pip install seleniumbase
+
+ENTRYPOINT ["pytest", "basic_test.py"]
+

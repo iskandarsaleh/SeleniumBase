@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  selenium-tests:
+    build: .
+    environment:
+      - DNS=8.8.8.8
+    volumes:
+      - .:/tests
+    command: pytest basic_test.py
+

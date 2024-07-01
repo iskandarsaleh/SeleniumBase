@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  selenium-tests:
+    image: selenium/standalone-chrome
+    environment:
+      - DNS=8.8.8.8
+    ports:
+      - "4444:4444"
+    volumes:
+      - .:/tests
+    command: > 
+      bash -c "selenium-server -port 4444"
+
